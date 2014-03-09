@@ -21,6 +21,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+			<repository>
+				<id>repository.jboss.org-public</id>
+				<name>JBoss repository</name>
+				<url>https://repository.jboss.org/nexus/content/groups/public</url>
+			</repository>
+		</repositories>
 	<properties>
 		<!-- Spring -->
 		<spring.version>3.2.3.RELEASE</spring.version>
@@ -209,6 +216,17 @@
 			<artifactId>ehcache</artifactId>
 			<version>1.2.3</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.6.1</version>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>log4j</groupId>
@@ -216,19 +234,27 @@
 			<version>1.2.15</version>
 			<exclusions>
 				<exclusion>
-					<groupId>com.sun.jmx</groupId>
-					<artifactId>jmxri</artifactId>
-				</exclusion>
-				<exclusion>
 					<groupId>com.sun.jdmk</groupId>
 					<artifactId>jmxtools</artifactId>
 				</exclusion>
 				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
 				</exclusion>
 			</exclusions>
+			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>0.9.26</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>0.9.26</version>
+		</dependency>
+
 		<dependency>
 			<groupId>opensymphony</groupId>
 			<artifactId>oscache</artifactId>
